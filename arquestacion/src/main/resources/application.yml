@@ -1,0 +1,16 @@
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      externalService:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+        permittedNumberOfCallsInHalfOpenState: 3
+        mininumNUmberOfCalls: 5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: resilience4j
